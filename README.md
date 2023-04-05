@@ -36,3 +36,11 @@ Display it with: https://www.couleur.org/JS-Web/ Sprint2023/image-360.html
 ## Video processing
 
 Apply this cube map based method on videos and stereo videos.
+
+## Instruction for my code:
+
+```wget https://drive.google.com/drive/folders/1s673CSSG-3f6cGYhULeopKp8pF4euFo8?usp=sharing```
+
+```unzip data.zip```
+
+
