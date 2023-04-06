@@ -39,17 +39,8 @@ Apply this cube map based method on videos and stereo videos.
 
 ## Instruction for my code:
 
-```wget https://drive.google.com/file/d/1pSnnK-QOVsgqJO1_8rbqXhD-GTU1Hm1O/view?usp=sharing```
+```wget https://drive.google.com/drive/folders/1s673CSSG-3f6cGYhULeopKp8pF4euFo8?usp=sharing```
 
 ```unzip data.zip```
 
-to compile the cuda and openCV file run:
-```
-/usr/local/cuda/bin/nvcc image.cu `pkg-config opencv4 --cflags --libs` imagecpp-linux.cpp -o imagecuda
-```
-
-to execute:
-```
-./imagecuda ./data/image-360-resized.jpg
-```
 
