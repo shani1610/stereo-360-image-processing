@@ -43,8 +43,6 @@ Apply this cube map based method on videos and stereo videos.
 
 ```unzip data.zip```
 
-### Equirectangular => Cube map
-
 to compile the cuda and openCV file run:
 ```
 /usr/local/cuda/bin/nvcc image.cu `pkg-config opencv4 --cflags --libs` imagecpp-linux.cpp -o imagecuda
@@ -53,17 +51,5 @@ to compile the cuda and openCV file run:
 to execute:
 ```
 ./imagecuda ./data/image-360-resized.jpg
-```
-
-### Cube map => Equirectangular
-
-to compile the cuda and openCV file run:
-```
-/usr/local/cuda/bin/nvcc image-from-cube.cu `pkg-config opencv4 --cflags --libs` imagecpp-from-cube-to-equi.cpp -o imagecuda_from_cube
-```
-
-to execute:
-```
-./imagecuda_from_cube image-cube.jpg
 ```
 

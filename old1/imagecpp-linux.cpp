@@ -46,10 +46,6 @@ int main( int argc, char** argv )
   d_result.download(h_result);
   
   cv::imshow("Cube Map Image", h_result);
-  cv::imwrite("image-cube.jpg", h_result);  
-  cv::waitKey(0);//wait till user press any key
-  cv::destroyWindow("MyWindow");//close the windsow and release allocate memory//
-  cout << "Image is saved successfully…..";
 
   cout << "Time: "<< diff.count() << endl;
   cout << "Time/frame: " << diff.count()/iter << endl;

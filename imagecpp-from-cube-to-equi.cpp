@@ -15,8 +15,8 @@ int main( int argc, char** argv )
 
   cv::Mat h_img = cv::imread(argv[1]);
   // let's downscale the image using new  width and height
-  int down_width = h_img.cols/10;
-  int down_height = h_img.rows/10;
+  int down_width = h_img.cols/1;
+  int down_height = h_img.rows/1;
   Mat resized_down;
   //resize down
   resize(h_img, resized_down, Size(down_width, down_height), INTER_LINEAR);
@@ -30,8 +30,6 @@ int main( int argc, char** argv )
   cv::cuda::GpuMat d_img, d_result;
   d_img.upload(h_img);
   d_result.upload(h_result);
-
-  // cv::imshow("Equirectangular Image", h_img);
   
   auto begin = chrono::high_resolution_clock::now();
   const int iter = 10;

@@ -18,6 +18,7 @@ __global__ void process(const cv::cuda::PtrStep<uchar3> src, cv::cuda::PtrStep<u
   const int width_cube = cols/3;
   const int height_cube = rows/2;
 
+
   // Y-
   if (dst_x < cols/3 && dst_y < rows/2)
     {
