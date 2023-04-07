@@ -10,22 +10,21 @@ void startCUDA ( cv::cuda::GpuMat& src,cv::cuda::GpuMat& dst );
 
 int main( int argc, char** argv )
 {
-  cv::namedWindow("Equirectangular Image", cv::WINDOW_OPENGL | cv::WINDOW_NORMAL);
-  cv::namedWindow("Cube Map Image", cv::WINDOW_OPENGL | cv::WINDOW_NORMAL);
-  cv::resizeWindow("Equirectangular Image", 480, 320);
+  cv::namedWindow("Equirectangular Image", cv::WINDOW_OPENGL | cv::WINDOW_AUTOSIZE);
+  cv::namedWindow("Cube Map Image", cv::WINDOW_OPENGL | cv::WINDOW_AUTOSIZE);
 
   cv::Mat h_img = cv::imread(argv[1]);
   // let's downscale the image using new  width and height
-  int down_width = h_img.cols/10;
-  int down_height = h_img.rows/10;
+  int down_width = h_img.cols/1;
+  int down_height = h_img.rows/1;
   Mat resized_down;
   //resize down
   resize(h_img, resized_down, Size(down_width, down_height), INTER_LINEAR);
   h_img = resized_down;
   // the result
-  int len_cube = h_img.cols/3;
-  int out_width = len_cube * 4;
-  int out_height = len_cube * 2; // not sure 
+  int len_cube = h_img.cols/4;
+  int out_width = len_cube * 3;
+  int out_height = len_cube * 2;
   cv::Mat h_result(out_height, out_width, CV_8UC3);
 
   cv::cuda::GpuMat d_img, d_result;
@@ -44,10 +43,10 @@ int main( int argc, char** argv )
 
   d_result.download(h_result);
   
-  cv::imshow("Equirectangular Image", h_result);
-  //cv::imwrite("image-from-cube.jpg", h_result);  
-  //cv::waitKey(0);//wait till user press any key
-  //cv::destroyWindow("MyWindow");//close the windsow and release allocate memory//
+  cv::imshow("Cube Map Image", h_result);
+  cv::imwrite("image-cube.jpg", h_result);  
+  cv::waitKey(0);//wait till user press any key
+  cv::destroyWindow("MyWindow");//close the windsow and release allocate memory//
   cout << "Image is saved successfully…..";
 
   cout << "Time: "<< diff.count() << endl;
