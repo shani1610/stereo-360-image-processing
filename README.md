@@ -2,15 +2,13 @@
 
 Let’s consider a stereo 360° image/video.
 
-See https://www.couleur.org/JS-Web/Sprint2023/image-stereo-360.html
-
-and https://www.couleur.org/JS-Web/Sprint2023/video-stereo-360.html
+See [image-stereo-360](https://www.couleur.org/JS-Web/Sprint2023/image-stereo-360.html) and [video-stereo-360](https://www.couleur.org/JS-Web/Sprint2023/video-stereo-360.html)
 
 ## Equirectangular vs cube map
 
-See: http://www.paul-reed.co.uk/programming.html
+See: [programming](http://www.paul-reed.co.uk/programming.html)
 
-Code: https://github.com/PaulMakesStuff/Cubemaps-Equirectangular-DualFishEye
+Code: [Cubemaps-Equirectangular-DualFishEye](https://github.com/PaulMakesStuff/Cubemaps-Equirectangular-DualFishEye)
  
 Implement the following image transformations with OpenCV and CUDA:
 
@@ -20,24 +18,7 @@ Implement the following image transformations with OpenCV and CUDA:
 
 on a stereo 360° (on the left or the right image from a static image or a video).
 
-## Equirectangular image filtering
-
-What is happening when you apply the denoising method you developed for PW2 on an equirectangular image?
-
-Display it with: https://www.couleur.org/JS-Web/Sprint2023/image-360.html
-
-## Cube map image filtering
-
-Now apply the same filtering methods on each face of the corresponding cube map and transform the resulting images in its equirectangular
-representation.
-
-Display it with: https://www.couleur.org/JS-Web/ Sprint2023/image-360.html
-
-## Video processing
-
-Apply this cube map based method on videos and stereo videos.
-
-## Instruction for my code:
+## Data
 
 ```wget https://drive.google.com/file/d/1pSnnK-QOVsgqJO1_8rbqXhD-GTU1Hm1O/view?usp=sharing```
 
@@ -52,8 +33,9 @@ to compile the cuda and openCV file run:
 
 to execute:
 ```
-./imagecuda ./data/image-360-resized.jpg
+./imagecuda <equirectangular-image-path>
 ```
+for example: ```./imagecuda_from_cube ./data/image-360-resized.jpg```
 
 ### Cube map => Equirectangular
 
@@ -64,6 +46,27 @@ to compile the cuda and openCV file run:
 
 to execute:
 ```
-./imagecuda_from_cube image-cube.jpg
+./imagecuda_from_cube <cubemap-image-path>
 ```
+for example: ```./imagecuda_from_cube image-cube.jpg```
+
+## Future work possibilities:
+
+### Equirectangular image filtering
+
+What is happening when you apply the denoising method you developed for PW2 on an equirectangular image?
+
+Display it with: [image-360 Three.js](https://www.couleur.org/JS-Web/Sprint2023/image-360.html)
+
+### Cube map image filtering
+
+Now apply the same filtering methods on each face of the corresponding cube map and transform the resulting images in its equirectangular
+representation.
+
+Display it with: [image-360 Three.js](https://www.couleur.org/JS-Web/Sprint2023/image-360.html)
+
+### Video processing
+
+Apply this cube map based method on videos and stereo videos.
+
 
